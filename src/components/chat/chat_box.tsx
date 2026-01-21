@@ -4,7 +4,7 @@ import { Message } from "./message";
 import { ChatInput } from "./chat_input";
 
 import styles from "./chat.module.css";
-import LoginButton from "../login/login_button";
+import LoginButton from "../auth/login_button";
 import { SessionProvider } from "next-auth/react";
 
 export type ChatBoxProps = {
@@ -27,7 +27,7 @@ export function ChatBox(props: ChatBoxProps) {
                 />
             ))}
         </div >
-        <SessionProvider><LoginButton /></SessionProvider>
+
         <ChatInput onSend={(text) => {
             setChats([...chats, text]);
         }} />

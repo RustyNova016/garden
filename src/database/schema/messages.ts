@@ -13,5 +13,7 @@ export const messages_table = pgTable("messages", {
     .$defaultFn(() => crypto.randomUUID()),
   text: text("text").notNull(),
   created_at: timestamp("timestamp1").notNull().defaultNow(),
-  user_id: text("user_id"),
+
+  user_id: text("user_id").notNull(),
+  chatroom_id: text("chatroom_id").notNull(),
 });
